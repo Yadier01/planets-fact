@@ -4,11 +4,11 @@ const app = express();
 
 const data = JSON.parse(fs.readFileSync("./data.json"));
 
-app.get("/api", (req, res) => {
+app.get("https://planets-fact-lac.vercel.app/api", (req, res) => {
   res.send(data);
 });
 
-app.get("/api/:id", (req, res) => {
+app.get("https://planets-fact-lac.vercel.app/api/:id", (req, res) => {
   //id is planets name
   const id = req.params.id;
   const planet = data.find((el) => el.name === id);
